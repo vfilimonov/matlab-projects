@@ -38,7 +38,8 @@
 %       projects rename myProject myLibrary
 % 
 %   All projects are stored in the %userpath%/projects.mat. This file with
-%   empty "default" project is created at the first run of the script.
+%   empty "default" project is created at the first run of the script. If
+%   %userpath% is empty, the script will execute userpath('reset').
 %   
 %   First project always has name "default"
 
@@ -49,6 +50,10 @@ function varargout = projects(cmd, varargin)
 
 if verLessThan('matlab','7.12')
     error('Projects: MATLAB versions older than R2011a (7.12) are not supported')
+end
+
+if isempty(userpath)
+    userpath('reset');
 end
 
 fpath = userpath;
