@@ -3,6 +3,8 @@ matlab-projects
 
 The missing projects manager for MATLAB
 
+## Brief reference
+
 ```PROJECTS(cmd, projectName)``` manages current working directory and files that are opened in MATLAB editor (but not the workspace). 
 
 Available commands are: 
@@ -32,7 +34,7 @@ Available commands are:
 ```PROJECTS('delete')``` deletes the active project
 ```PROJECTS('delete', projectName)``` deletes the project with specified name
 
-Examples:
+## Usage examples
 
     projects list
     projects save myProject
@@ -40,6 +42,12 @@ Examples:
     projects load default
     projects rename myProject myLibrary
 
+## Note
+
 All projects are stored in the ```%userpath%/projects.mat```. This file with the empty "default" project is created at the first run of the script.
 
 First project always has name "default"
+
+## License
+
+PyDatastream is released under the MIT license.
